@@ -58,6 +58,8 @@
           (look))
         '(you cannot go that way))))
 
+;; Manipulating objects
+
 (defun pickup (object)
   (cond ((member object
                  (objects-at *location* *objects* *object-locations*))
@@ -74,3 +76,9 @@
 
 (defun inventory ()
   (cons 'items- (objects-at 'body *objects* *object-locations*)))
+
+;; REPL
+
+(defun game-repl ()
+  (loop (print (eval (read)))))
+
